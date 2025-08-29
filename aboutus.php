@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservation Of Flights- About Us</title>
+    <title>Fares Kart- About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -66,4 +66,5 @@
                 FaresKart is online travel agency delivering top-notch service worldwide. Our experienced professionals ensure smooth journeys with trusted support and travel solutions. Wherever you go, we’re here to make your trip easy, comfortable, and memorable.
             </p>
         </div>
+
     </section>
