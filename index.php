@@ -1,0 +1,680 @@
+<?php require_once('wordpress-connect.php'); ?>
+<html <?php echo wordpress_language_attributes(); ?>>
+
+<head>
+    <meta charset="<?php echo bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo wp_title('|', true, 'right'); ?></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <?php wp_head(); ?>
+</head>
+
+<body <?php echo 'class="' . wordpress_body_class() . '"'; ?>>
+    
+    <!-- Top Promo Banner -->
+    <div class="promo-banner">
+        Get Great Deals! Choose from 200+ airlines for low airfares!
+    </div>
+    <!-- Header -->
+
+    <header>
+        <div class="container header-container">
+            <a href="index.php" class="logo">Fares<span> kart</span></a>
+            <nav>
+                <ul>
+            
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="Aboutus.php">About Us</a></li>
+                
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="blogs.php">Blogs</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#">Login</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1><?php echo wordpress_get_theme_mod('hero_title', 'Find & Book Your Perfect Trip'); ?></h1>
+            <p><?php echo wordpress_get_theme_mod('hero_subtitle', 'Discover amazing deals on flights, hotels, and vacation packages around the world'); ?></p>
+
+          
+<!-- Search Tabs --> 
+<div class="search-tabs"> <div class="tab active" id="round-trip">Round Trip</div> 
+<div class="tab" id="one-way">One Way</div> 
+<div class="tab" id="booking-class">Booking Class</div> </div>
+          
+  <!-- Search Form -->
+<form class="search-form" action="result.php" method="GET">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="From">From</label>
+                        <input type="text" id="from"name="from" placeholder="From City or Airport" autocomplete="off" required />
+                        <div id="from-suggestions" class="autocomplete-suggestions"></div>
+
+         
+
+                    
+                    </div>
+                    <div class="form-group">
+                        <label for="to">To</label>
+                        <input type="text"id="to" name="to"placeholder="To City or Airport" autocomplete="off" required />
+                        <div id="to-suggestions" class="autocomplete-suggestions"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="departure">departure</label>
+                        <input type="date" placeholder="departure"  name="departure" required/>
+                    </div>
+                    <div class="form-group"id="return-group">
+                        <label for="return">return</label>
+                        <input type="date" placeholder="return" name="return"required />
+                    </div>
+                    <div class="form-group">
+                        <label for="passengers">Passengers</label>
+                        <select id="passengers"name="passengers">
+      <option>1 Adult</option>
+      <option>2 Adults</option>
+      <option>3 Adults</option>
+    </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="class">Class</label>
+                        <select id="class"name="class">
+      <option>Economy</option>
+      <option>Business</option>
+      <option>First Class</option>
+    </select>
+                    </div>
+                </div>
+
+                <div class="form-group" style="flex: 2;">
+                    <br>
+
+                    <button class="search-button">Search Flights</button>
+
+                </div>
+            </div>
+        </div>
+        </div>
+        </form>
+
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="features-container">
+            <div class="feature-box">
+                <img src="icon12.png" alt="Top Destinations" />
+                <h3>Top Destinations</h3>
+                <p>The top destinations are waiting to get explored. What are you waiting for?</p>
+            </div>
+            <div class="feature-box">
+                <img src="icon23.png" alt="Best Prices" />
+                <h3>The Best Prices</h3>
+                <p>Why hunt for other portals when we bring you the best cut-rate deals and offers?</p>
+            </div>
+            <div class="feature-box">
+                <img src="icon34.png" alt="Amazing Services" />
+                <h3>Amazing Services</h3>
+                <p>Captivating services await to make your trip electrifying.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us">
+        <div class="about-container">
+            <div class="about-tabs">
+                <button class="tab-yellow">About</button>
+                <button class="tab-blue">Us</button>
+            </div>
+            <p class="about-text">
+                <?php echo wordpress_get_theme_mod('about_text', 'FaresKart is online travel agency delivering top-notch service worldwide. Our experienced professionals ensure smooth journeys with trusted support and travel solutions. Wherever you go, we\'re here to make your trip easy, comfortable, and memorable.'); ?>
+            </p>
+        </div>
+    </section>
+    <!-- premium service section -->
+    <section class="premium-services">
+        <h2>Premium Services</h2>
+        <div class="carousel-wrapper">
+
+            <div class="carousel-container">
+                <div class="carousel" id="carousel">
+
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <a href="premium.php" class="card">
+                        
+                        <img src="img1.jpg" alt="Premium Comfort" />
+                        <div class="card-content">
+                            <h3>Premium Comfort</h3>
+                            <p>Luxury seats at discounted prices</p>
+                            <small>Experience premium comfort.</small>
+                            <button>Discover</button></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <a href="student.php" class="card">
+                        <img src="img2.jpg" alt="Student Travel Deals" />
+                        <div class="card-content">
+                            <h3>Student Travel Deals</h3>
+                            <p>Special discounts for students</p>
+                            <small>Explore the world while studying.</small>
+                            <button>Discover</button></a>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Card 3 -->
+                    <div class="card">
+                        <a href="topairlines.php" class="card">
+                        <img src="img3.jpg" alt="Top Airlines" />
+                        <div class="card-content">
+                            <h3>Top Airlines</h3>
+                            <p>Best Airlines Worldwide</p>
+                            <small>Fly with the world's most trusted airlines.</small>
+                            <button>Discover</button></a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="card">
+                        <a href="firstclass.php" class="card">
+                        <img src="img4.jpg" alt="First Class Deals" />
+                        <div class="card-content">
+                            <h3>First Class Deals</h3>
+                            <p>Luxury flights starting from $400</p>
+                            <small>Perfect for budget travelers.</small>
+                            <button>Discover</button></a>
+                        </div>
+                    </div>
+
+                    <!-- ✅ New Card 5 -->
+                    <div class="card">
+                        <a href="student.php" class="card">
+                        <img src="img2.jpg" alt="Student Travel Deals" />
+                        <div class="card-content">
+                            <h3>Student Travel Deals</h3>
+                            <p>Budget-friendly travel options</p>
+                            <small>Affordable flights for students.</small>
+                            <button>Discover</button></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+    </section>
+
+
+   
+
+    <!-- find your perfect destination -->
+    <section class="destinations">
+        <div class="destinations-header">
+            <h2>Find your <span>Perfect Destinations</span></h2>
+            <br>
+            <p>Explore your dream domestic and international destinations at the lowest airfare today.</p>
+        </div>
+
+        <div class="destination-grid">
+            <div class="destination-card">
+                <a href="chicago.php" class="card">
+                <img src="city23.jpg" alt="Chicago">
+                <h3>Chicago</h3>
+                <p>USA</p></a>
+                
+            </div>
+
+            <div class="destination-card">
+                <a href="newyork.php" class="card">
+                <img src="city2.jpg" alt="New York">
+                <h3>New York</h3>
+                <p>USA</p></a>
+            </div>
+
+            <div class="destination-card">
+                   <a href="denver.php" class="card">
+                <img src="denver.jpg" alt="Denver">
+                <h3>Denver</h3>
+                <p>Colorado</p></a>
+            </div>
+
+            <div class="destination-card">
+                 <a href="miami.php" class="card">
+                <img src="miami.jpg" alt="Miami">
+                <h3>Miami</h3>
+                <p>USA</p></a>
+            </div>
+
+            <div class="destination-card">
+                 <a href="tokyo.php" class="card">
+                <img src="city5.jpg" alt="Tokyo">
+                <h3>Tokyo</h3>
+                <p>Japan</p></a>
+            </div>
+
+            <div class="destination-card">
+                <a href="austin.php" class="card">
+                <img src="austin.jpg" alt="Austin">
+                <h3>Austin</h3>
+                <p>USA</p></a>
+            </div>
+
+            <div class="destination-card">
+                <a href="honolulu.php" class="card">
+                <img src="Honolulu.jpg" alt="Honolulu">
+                <h3> Honolulu</h3>
+                <p>Hawaii</p></a>
+            </div>
+
+            <div class="destination-card">
+                <a href="toronto.php" class="card">
+                <img src="city8.jpg" alt="Toronto">
+                <h3>Toronto</h3>
+                <p>Canada</p></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- travel guide section -->
+    <section class="travel-guides">
+        <div class="container">
+            <h2>Travel Guides</h2>
+            <p class="subtitle">Explore our travel guides and discover new destinations.</p>
+
+            <div class="guides-grid">
+                <div class="guide-card">
+                     <a href="paris.php" class="card">
+                    <div class="guide-image">
+                        <img src="paris.jpg.avif" alt="Paris">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Paris Guide</h3>
+                        <p>Discover the best of Paris with our travel guide.</p></a>
+                    </div>
+                </div>
+
+              
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <a href="moscow.php" class="card">
+                        <img src="moscow.jpg" alt="New York">
+                    </div>
+                    <div class="guide-content">
+                        <h3>Moscow Guide</h3>
+                        <p>Discover the best of Moscow with our travel guide.</p></a>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <div class="guide-image">
+                        <a href="london.php" class="card">
+                        <img src="londin.jpg" alt="London">
+                    </div>
+                    <div class="guide-content">
+                        <h3>London Guide</h3>
+                        <p>Explore the best of London with our travel guide.</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- payment section -->
+    <section class="payment-section">
+        <div class="container">
+            <h2 class="payment-heading">SecurePayment</h2>
+            <p class="payment-description">Safe and secure payment processing with multiple payment options.</p>
+
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <img src="logooo.jpg" alt="VISA" width="80">
+                </div>
+                <div class="payment-method">
+                    <img src="PayPal--logo.png" alt="PayPal" width="100">
+                </div>
+                <div class="payment-method">
+                    <img src="mastercard--logo.png" alt="mastercard" width="80">
+                </div>
+                <!-- Add more payment methods as needed -->
+            </div>
+        </div>
+    </section>
+    <!-- testimonial section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What others think</h2>
+            <h3>Testimonials</h3>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <h4>Jenny</h4>
+                        <p>Fares kart is effortless to use and you can reserve flights, hotels, and car rentals on the homepage. They let you sort by price, arrival, departure, and other amenities. All inventories also display details about transfers
+                            and stay times. I had a very good experience with the team.</p>
+                        <div class="rating">✧ ✧ ✧ ✧ ✧</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <h4>Steve</h4>
+                        <p>The support team organizes each travel experience at its best and lets you enjoy the entire tour. Whenever we used to stick with the services they were always with us to make sure that we are having a positive experience with them.
+                            Thank you for making our vacation memorable.</p>
+                        <div class="rating">✧ ✧ ✧ ✧ ✧</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <h4>James</h4>
+                        <p>This made a place in my priority list with its helpful services... expect to have such experience on vacation more. I will be glad if the team always comes up with their great services.</p>
+                        <div class="rating">✧ ✧ ✧ ✧ ✧</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="numbers-section">
+        <div class="container">
+            <h3>Our Numbers</h3>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="number"><?php echo wordpress_get_theme_mod('customers_number', '2,000,000+'); ?></div>
+                    <div class="label">Happy Customers</div>
+                </div>
+                <div class="number-card">
+                    <div class="number"><?php echo wordpress_get_theme_mod('airlines_number', '600+'); ?></div>
+                    <div class="label">Airlines</div>
+                </div>
+                <div class="number-card">
+                    <div class="number"><?php echo wordpress_get_theme_mod('destinations_number', '1,000+'); ?></div>
+                    <div class="label">Destinations</div>
+                </div>
+                <div class="number-card">
+                    <div class="number"><?php echo wordpress_get_theme_mod('experience_years', '5+'); ?></div>
+                    <div class="label">Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p><?php echo wordpress_get_theme_mod('footer_about_text', 'FaresKart is a leading travel platform dedicated to helping you find the best deals on flights, hotels, and vacation packages worldwide.'); ?></p>
+                    <div class="social-links">
+                        <a href="<?php echo wordpress_get_theme_mod('social_facebook', '#'); ?>"><i class="fab fa-facebook-f"></i></a>
+                        <a href="<?php echo wordpress_get_theme_mod('social_twitter', '#'); ?>"><i class="fab fa-twitter"></i></a>
+                        <a href="<?php echo wordpress_get_theme_mod('social_instagram', '#'); ?>"><i class="fab fa-instagram"></i></a>
+                        <a href="<?php echo wordpress_get_theme_mod('social_linkedin', '#'); ?>"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="Aboutus.php">About Us</a></li>
+                        
+                        <li><a href="contact.php">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Support</h3>
+                
+ <ul class="footer-links">
+            
+            
+            <li><a href="privacy.php">Privacy Policy</a></li>
+            <li><a href="terms.php">Terms and conditions</a></li>
+            <li><a href="disclaimer.php">Disclaimer</a></li> <!-- Add this line -->
+        </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> <?php echo wordpress_get_theme_mod('contact_address', '123 Travel St, Suite 100'); ?></li>
+                        <li><i class="fas fa-phone"></i> <?php echo wordpress_get_theme_mod('contact_phone', '+1 (555) 123-4567'); ?></li>
+                        <li><i class="fas fa-envelope"></i> <?php echo wordpress_get_theme_mod('contact_email', 'support@fareskart.com'); ?></li>
+                    </ul>
+                </div>
+            </div>
+
+           
+
+       
+     
+    </footer>
+      <!-- Bottom Disclaimer -->
+      <div style="background:#092b4a; text-align:center; padding:20px; font-size:14px; line-height:1.6; color:#dce3ec;">
+        <p>
+          <?php echo wordpress_get_theme_mod('disclaimer_text', 'FaresKart, Operated under Quick travels Inc, is an independent travel agency and not affiliated with or operated by any airline. All flight reservations are governed by the specific terms and fare rules of the respective airlines. Our service fees apply exclusively to the booking and customer support we provide, and are separate from any airline-imposed charges.'); ?>
+        </p>
+
+        <p style="margin-top:15px;">© <?php echo date('Y'); ?> <?php echo bloginfo('name'); ?>. All Rights Reserved.</p>
+
+        <!-- ARC Certified Button -->
+        <a href="<?php echo wordpress_get_theme_mod('arc_certified_link', '#'); ?>" style="display:inline-block; margin-top:10px; padding:10px 25px; border:1px solid #fff; border-radius:6px; color:#fff; text-decoration:none;">ARC Certified</a>
+<script>
+  const roundTripTab = document.getElementById("round-trip");
+  const oneWayTab = document.getElementById("one-way");
+  const bookingClassTab = document.getElementById("booking-class");
+  const returnGroup = document.getElementById("return-group");
+  const returnInput = returnGroup.querySelector("input"); // get the input inside
+
+  function activateTab(tab) {
+    document.querySelectorAll(".tab").forEach(el => el.classList.remove("active"));
+    tab.classList.add("active");
+  }
+
+  roundTripTab.addEventListener("click", () => {
+    activateTab(roundTripTab);
+    returnGroup.classList.remove("hidden");
+    returnInput.disabled = false;   // ✅ Enable input
+  });
+
+  oneWayTab.addEventListener("click", () => {
+    activateTab(oneWayTab);
+    returnGroup.classList.add("hidden");
+    returnInput.disabled = true;    // ✅ Disable input
+  });
+
+  bookingClassTab.addEventListener("click", () => {
+    activateTab(bookingClassTab);
+    returnGroup.classList.add("hidden");
+    returnInput.disabled = true;    // ✅ Disable input
+  });
+</script>
+
+
+<script>
+const airports = [ // United States
+  { code: "JFK", name: "John F. Kennedy International", city: "New York", country: "USA" },
+  { code: "LAX", name: "Los Angeles International", city: "Los Angeles", country: "USA" },
+  { code: "ORD", name: "O'Hare International", city: "Chicago", country: "USA" },
+  { code: "MIA", name: "Miami International", city: "Miami", country: "USA" },
+  { code: "ATL", name: "Hartsfield-Jackson Atlanta International", city: "Atlanta", country: "USA" },
+  { code: "DFW", name: "Dallas/Fort Worth International", city: "Dallas", country: "USA" },
+  { code: "DEN", name: "Denver International", city: "Denver", country: "USA" },
+  { code: "LAS", name: "McCarran International", city: "Las Vegas", country: "USA" },
+  { code: "PHX", name: "Phoenix Sky Harbor International", city: "Phoenix", country: "USA" },
+  { code: "IAH", name: "George Bush Intercontinental", city: "Houston", country: "USA" },
+  { code: "MCO", name: "Orlando International", city: "Orlando", country: "USA" },
+  { code: "SEA", name: "Seattle-Tacoma International", city: "Seattle", country: "USA" },
+  { code: "EWR", name: "Newark Liberty International", city: "Newark", country: "USA" },
+  { code: "MSP", name: "Minneapolis-Saint Paul International", city: "Minneapolis", country: "USA" },
+  { code: "DTW", name: "Detroit Metropolitan Wayne County", city: "Detroit", country: "USA" },
+  { code: "PHL", name: "Philadelphia International", city: "Philadelphia", country: "USA" },
+  { code: "LGA", name: "LaGuardia", city: "New York", country: "USA" },
+  { code: "BWI", name: "Baltimore/Washington International", city: "Baltimore", country: "USA" },
+  { code: "DCA", name: "Ronald Reagan Washington National", city: "Washington D.C.", country: "USA" },
+  { code: "IAD", name: "Washington Dulles International", city: "Washington D.C.", country: "USA" },
+  
+  // International - Europe
+  { code: "LHR", name: "Heathrow", city: "London", country: "UK" },
+  { code: "CDG", name: "Charles de Gaulle", city: "Paris", country: "France" },
+  { code: "ORY", name: "Orly", city: "Paris", country: "France" },
+  { code: "FRA", name: "Frankfurt am Main", city: "Frankfurt", country: "Germany" },
+  { code: "MUC", name: "Munich", city: "Munich", country: "Germany" },
+  { code: "AMS", name: "Amsterdam Schiphol", city: "Amsterdam", country: "Netherlands" },
+  { code: "MAD", name: "Madrid-Barajas", city: "Madrid", country: "Spain" },
+  { code: "BCN", name: "Barcelona-El Prat", city: "Barcelona", country: "Spain" },
+  { code: "FCO", name: "Rome Fiumicino", city: "Rome", country: "Italy" },
+  { code: "MXP", name: "Milan Malpensa", city: "Milan", country: "Italy" },
+  { code: "ZUR", name: "Zurich", city: "Zurich", country: "Switzerland" },
+  { code: "VIE", name: "Vienna International", city: "Vienna", country: "Austria" },
+  { code: "CPH", name: "Copenhagen", city: "Copenhagen", country: "Denmark" },
+  { code: "ARN", name: "Stockholm Arlanda", city: "Stockholm", country: "Sweden" },
+  { code: "OSL", name: "Oslo Gardermoen", city: "Oslo", country: "Norway" },
+  { code: "HEL", name: "Helsinki-Vantaa", city: "Helsinki", country: "Finland" },
+  { code: "LGW", name: "Gatwick", city: "London", country: "UK" },
+  { code: "MAN", name: "Manchester", city: "Manchester", country: "UK" },
+  { code: "EDI", name: "Edinburgh", city: "Edinburgh", country: "UK" },
+  { code: "DUB", name: "Dublin", city: "Dublin", country: "Ireland" },
+  
+  // Asia-Pacific
+  { code: "NRT", name: "Narita International", city: "Tokyo", country: "Japan" },
+  { code: "HND", name: "Haneda", city: "Tokyo", country: "Japan" },
+  { code: "KIX", name: "Kansai International", city: "Osaka", country: "Japan" },
+  { code: "ICN", name: "Incheon International", city: "Seoul", country: "South Korea" },
+  { code: "PEK", name: "Beijing Capital International", city: "Beijing", country: "China" },
+  { code: "PVG", name: "Shanghai Pudong International", city: "Shanghai", country: "China" },
+  { code: "CAN", name: "Guangzhou Tianhe International", city: "Guangzhou", country: "China" },
+  { code: "HKG", name: "Hong Kong International", city: "Hong Kong", country: "Hong Kong" },
+  { code: "SIN", name: "Singapore Changi", city: "Singapore", country: "Singapore" },
+  { code: "BKK", name: "Suvarnabhumi", city: "Bangkok", country: "Thailand" },
+  { code: "KUL", name: "Kuala Lumpur International", city: "Kuala Lumpur", country: "Malaysia" },
+  { code: "CGK", name: "Soekarno-Hatta International", city: "Jakarta", country: "Indonesia" },
+  { code: "DPS", name: "Ngurah Rai International", city: "Bali", country: "Indonesia" },
+  { code: "MNL", name: "Ninoy Aquino International", city: "Manila", country: "Philippines" },
+  { code: "SYD", name: "Sydney Kingsford Smith", city: "Sydney", country: "Australia" },
+  { code: "MEL", name: "Melbourne", city: "Melbourne", country: "Australia" },
+  { code: "BNE", name: "Brisbane", city: "Brisbane", country: "Australia" },
+  { code: "PER", name: "Perth", city: "Perth", country: "Australia" },
+  { code: "AKL", name: "Auckland", city: "Auckland", country: "New Zealand" },
+  { code: "DEL", name: "Indira Gandhi International", city: "New Delhi", country: "India" },
+  { code: "BOM", name: "Chhatrapati Shivaji Maharaj International", city: "Mumbai", country: "India" },
+  { code: "BLR", name: "Kempegowda International", city: "Bangalore", country: "India" },
+  
+  // Middle East & Africa
+  { code: "DXB", name: "Dubai International", city: "Dubai", country: "UAE" },
+  { code: "AUH", name: "Abu Dhabi International", city: "Abu Dhabi", country: "UAE" },
+  { code: "KWI", name: "Kuwait International", city: "Kuwait City", country: "Kuwait" },
+  { code: "BAH", name: "Bahrain International", city: "Manama", country: "Bahrain" },
+  { code: "MCT", name: "Muscat International", city: "Muscat", country: "Oman" },
+  { code: "AMM", name: "Queen Alia International", city: "Amman", country: "Jordan" },
+  { code: "BEY", name: "Rafic Hariri International", city: "Beirut", country: "Lebanon" },
+  { code: "DAM", name: "Damascus International", city: "Damascus", country: "Syria" },
+  { code: "BGW", name: "Baghdad International", city: "Baghdad", country: "Iraq" },
+  { code: "EBL", name: "Erbil International", city: "Erbil", country: "Iraq" },
+  { code: "TBS", name: "Tbilisi International", city: "Tbilisi", country: "Georgia" },
+  { code: "BAK", name: "Heydar Aliyev International", city: "Baku", country: "Azerbaijan" },
+  { code: "EVN", name: "Zvartnots International", city: "Yerevan", country: "Armenia" },
+  
+  // Additional Pacific/Oceania Airports
+  { code: "NAN", name: "Nadi International", city: "Nadi", country: "Fiji" },
+  { code: "SUV", name: "Nausori Airport", city: "Suva", country: "Fiji" },
+  { code: "PPT", name: "Faa'a International", city: "Papeete", country: "French Polynesia" },
+  { code: "NOU", name: "La Tontouta International", city: "Noumea", country: "New Caledonia" },
+  { code: "VLI", name: "Port Vila Bauerfield", city: "Port Vila", country: "Vanuatu" },
+  { code: "HIR", name: "Honiara International", city: "Honiara", country: "Solomon Islands" },
+  { code: "POM", name: "Jacksons International", city: "Port Moresby", country: "Papua New Guinea" },
+  { code: "GUM", name: "Antonio B. Won Pat International", city: "Hagatna", country: "Guam" },
+  { code: "SPN", name: "Francisco C. Ada Saipan International", city: "Saipan", country: "Northern Mariana Islands" },
+  
+  // Additional Central Asian Airports
+  { code: "TSE", name: "Nur-Sultan Nazarbayev International", city: "Nur-Sultan", country: "Kazakhstan" },
+  { code: "ALA", name: "Almaty International", city: "Almaty", country: "Kazakhstan" },
+  { code: "TAS", name: "Islam Karimov Tashkent International", city: "Tashkent", country: "Uzbekistan" },
+  { code: "SAM", name: "Samarkand International", city: "Samarkand", country: "Uzbekistan" },
+  { code: "ASB", name: "Oguzhan Airport", city: "Ashgabat", country: "Turkmenistan" },
+  { code: "OSS", name: "Osh Airport", city: "Osh", country: "Kyrgyzstan" },
+  { code: "FRU", name: "Manas International", city: "Bishkek", country: "Kyrgyzstan" },
+  { code: "DYU", name: "Dushanbe Airport", city: "Dushanbe", country: "Tajikistan" },
+  
+  // Additional South American Airports
+  { code: "UIO", name: "Mariscal Sucre International", city: "Quito", country: "Ecuador" },
+  { code: "GYE", name: "Jose Joaquin de Olmedo International", city: "Guayaquil", country: "Ecuador" },
+  { code: "ASU", name: "Silvio Pettirossi International", city: "Asuncion", country: "Paraguay" },
+  { code: "MVD", name: "Carrasco International", city: "Montevideo", country: "Uruguay" },
+  { code: "PDP", name: "Capitan Fuentes Martinez International", city: "Punta del Este", country: "Uruguay" },
+  { code: "GEO", name: "Cheddi Jagan International", city: "Georgetown", country: "Guyana" },
+  { code: "PBM", name: "Johan Adolf Pengel International", city: "Paramaribo", country: "Suriname" },
+  { code: "CAY", name: "Rochambeau Airport", city: "Cayenne", country: "French Guiana" }
+
+
+   
+
+
+]
+
+function setupAutocomplete(inputId, suggestionId) {
+  const input = document.getElementById(inputId);
+  const suggestionBox = document.getElementById(suggestionId);
+
+  input.addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    suggestionBox.innerHTML = "";
+    if (!query) return;
+
+    const matches = airports.filter(
+      a =>
+        a.code.toLowerCase().includes(query) ||
+        a.city.toLowerCase().includes(query) ||
+        a.name.toLowerCase().includes(query)
+    );
+
+    matches.forEach(a => {
+      const div = document.createElement("div");
+      div.classList.add("autocomplete-suggestion");
+      div.textContent = `${a.city} (${a.code}) - ${a.name}`;
+      div.onclick = () => {
+        input.value = `${a.city} (${a.code})`;
+        suggestionBox.innerHTML = "";
+      };
+      suggestionBox.appendChild(div);
+    });
+  });
+
+  document.addEventListener("click", function(e) {
+    if (e.target !== input) suggestionBox.innerHTML = "";
+  });
+}
+
+setupAutocomplete("from", "from-suggestions");
+setupAutocomplete("to", "to-suggestions");
+</script>
+
+<?php wp_footer(); ?>
+
+</body>
+
+</html>
+
+
+
