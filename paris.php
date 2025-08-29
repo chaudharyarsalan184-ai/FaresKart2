@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MiAmi - Reservations of flights</title>
+  <title>MiAmi - Fares Kart</title>
   <meta name="description" content="Disclaimer page for Hydra Travels INC. Learn about our terms of use, liability, and third-party links.">
   <link rel="stylesheet" href="style.css"> <!-- keep your existing CSS -->
 </head>
@@ -53,4 +53,5 @@
 <p>The best time to visit Paris is from June to August and September to October. Summer offers warm weather and long days, while fall provides pleasant temperatures and beautiful autumn colors.</p>
 <br>
 <h4>Local Cuisine</h4>
+
 <p>Paris is a culinary paradise offering everything from Michelin-starred restaurants to charming bistros. Don't miss trying croissants, macarons, escargot, coq au vin, and fine French wines.</p>
