@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tokyo- Reservations of flights</title>
+  <title>Tokyo- Fares Kart</title>
   <meta name="description" content="Disclaimer page for Hydra Travels INC. Learn about our terms of use, liability, and third-party links.">
   <link rel="stylesheet" href="style.css"> <!-- keep your existing CSS -->
 </head>
@@ -56,4 +56,5 @@
 <h4>Local Cuisine</h4>
 
 <p>Tokyo offers incredible cuisine from sushi and ramen to tempura and wagyu beef. The city has more Michelin stars than any other city in the world.</p>
+
 
