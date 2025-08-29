@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austin - Reservations of flights</title>
+  <title>Austin - Fares Kart</title>
   <meta name="description" content="Disclaimer page for Hydra Travels INC. Learn about our terms of use, liability, and third-party links.">
   <link rel="stylesheet" href="style.css"> <!-- keep your existing CSS -->
 </head>
@@ -59,4 +59,5 @@
 <li>Air Canada Flights</li>
 <br>
 <h4>Best Time to visit Austin:</h4>
+
 <p>The best times to visit Austin are from September to November or March to May, when the 70s and 80s are the anticipated daytime temperatures. However, as temperatures climb into the mid-to-high 90s with high humidity, the Texan summer, which is from June through August, makes it barely tolerable for unaccustomed visitors.</p>
