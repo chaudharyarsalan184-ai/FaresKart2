@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Reservations of flights</title>
+  <title>Privacy Policy - Fares Kart</title>
   <meta name="description" content="Privacy Policy page for Hydra Travels INC. Learn about our terms of use, liability, and third-party links.">
   <link rel="stylesheet" href="style.css"> <!-- keep your existing CSS -->
 </head>
@@ -66,3 +66,4 @@
   <!-- Or paste your footer code if not using PHP -->
 </body>
 </html>
+
